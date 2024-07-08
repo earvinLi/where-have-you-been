@@ -1,5 +1,4 @@
 import { AppBar, Avatar, Toolbar, Typography } from '@mui/material';
-import { deepOrange } from '@mui/material/colors';
 
 const appSidebarWidth = 240;
 

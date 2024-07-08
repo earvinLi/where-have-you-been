@@ -1,6 +1,6 @@
 'use client';
 
-import { Controller, SubmitHandler } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 
 import {
   Button,
@@ -27,7 +27,7 @@ export default function CreateMemoryModal() {
     createMemoryFormReset,
   } = useCreateMemoryForm();
 
-  const handleCreateMemory: SubmitHandler<CreateMemoryFormInputs> = (
+  const handleCreateMemory = (
     dataToCreateMemory,
   ) => console.log(dataToCreateMemory);
 
@@ -40,7 +40,7 @@ export default function CreateMemoryModal() {
           name="memoryName"
           control={createMemoryFormControl}
           rules={{ required: true }}
-          render={({ field }: any) => (
+          render={({ field }) => (
             <TextField
               label="Memory name"
               fullWidth

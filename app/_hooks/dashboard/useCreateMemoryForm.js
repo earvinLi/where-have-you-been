@@ -2,12 +2,8 @@
 
 import { useForm } from 'react-hook-form';
 
-export interface CreateMemoryFormInputs {
-  memoryName: string;
-}
-
 const useCreateMemoryForm = () => {
-  const { handleSubmit, control, reset } = useForm<CreateMemoryFormInputs>({
+  const { handleSubmit, control, reset } = useForm({
     defaultValues: {
       memoryName: '',
     },
