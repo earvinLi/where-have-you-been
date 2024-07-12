@@ -12,10 +12,9 @@ import {
   TextField,
 } from '@mui/material';
 
-import useCreateMemoryForm, {
-  CreateMemoryFormInputs,
-} from '@/hooks/dashboard/useCreateMemoryForm';
-import { useSharedCreateMemoryModal } from '@/hooks/modalHooks';
+import useCreateMemoryForm from '@/hooks/dashboard/useCreateMemoryForm';
+import { useSharedCreateMemoryModal } from '@/hooks/dashboard/dashboardModalHooks';
+import { requestToCreateMemory } from '@/hooks/dashboard/memoryHooks';
 
 export default function CreateMemoryModal() {
   const { createMemoryModalIsOpen, closeCreateMemoryModal } =
@@ -27,9 +26,11 @@ export default function CreateMemoryModal() {
     createMemoryFormReset,
   } = useCreateMemoryForm();
 
-  const handleCreateMemory = (
+  const handleCreateMemory = async (
     dataToCreateMemory,
-  ) => console.log(dataToCreateMemory);
+  ) => {
+    await requestToCreateMemory(dataToCreateMemory);
+  };
 
   return (
     <Dialog open={createMemoryModalIsOpen} onClose={closeCreateMemoryModal}>
