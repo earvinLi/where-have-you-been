@@ -14,11 +14,10 @@ import {
 
 import useCreateMemoryForm from '@/hooks/dashboard/useCreateMemoryForm';
 import { useSharedCreateMemoryModal } from '@/hooks/dashboard/dashboardModalHooks';
-import { requestToCreateMemory } from '@/hooks/dashboard/memoryHooks';
+import useMemories from '@/hooks/dashboard/memoryHooks';
 
 export default function CreateMemoryModal() {
-  const { createMemoryModalIsOpen, closeCreateMemoryModal } =
-    useSharedCreateMemoryModal();
+  const { createMemoryModalIsOpen, closeCreateMemoryModal } = useSharedCreateMemoryModal();
 
   const {
     createMemoryFormHandleSubmit,
@@ -26,10 +25,12 @@ export default function CreateMemoryModal() {
     createMemoryFormReset,
   } = useCreateMemoryForm();
 
-  const handleCreateMemory = async (
-    dataToCreateMemory,
-  ) => {
+  const { requestToCreateMemory } = useMemories();
+
+  const handleCreateMemory = async (dataToCreateMemory) => {
     await requestToCreateMemory(dataToCreateMemory);
+    createMemoryFormReset();
+    closeCreateMemoryModal();
   };
 
   return (

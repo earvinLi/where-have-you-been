@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 
-import { useMemories } from '@/hooks/dashboard/memoryHooks';
+import useMemories from '@/hooks/dashboard/memoryHooks';
 
 import memoryTableColumns from './memoryTableColumns';
 
