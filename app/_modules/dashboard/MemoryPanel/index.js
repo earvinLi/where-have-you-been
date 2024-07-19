@@ -11,20 +11,12 @@ export default function Dashboard() {
   const { openCreateMemoryModal } = useSharedCreateMemoryModal();
 
   return (
-    <Box
-      component="main"
-      sx={{
-        flexGrow: 1,
-        bgcolor: 'background.default',
-        p: 3,
-      }}
-    >
-      <Toolbar />
+    <>
       <Button onClick={openCreateMemoryModal} variant="contained">
         Recall
       </Button>
       <MemoryTable />
       <CreateMemoryModal />
-    </Box>
+    </>
   );
 }

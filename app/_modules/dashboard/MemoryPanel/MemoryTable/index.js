@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Paper } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 
 import useMemories from '@/hooks/dashboard/memoryHooks';
@@ -11,7 +11,7 @@ export default function MemoryTable() {
   if (isLoadingMemories) return <div>Loading...</div>;
   if (loadingMemoriesError) return <div>Error!</div>;
   return (
-    <Box sx={{ height: 400, width: '100%' }}>
+    <Paper sx={{ height: 400, width: '100%' }}>
       <DataGrid
         rows={memories}
         columns={memoryTableColumns}
@@ -26,6 +26,6 @@ export default function MemoryTable() {
         disableRowSelectionOnClick
         getRowId={(row) => row._id}
       />
-    </Box>
+    </Paper>
   );
 }

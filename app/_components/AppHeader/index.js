@@ -5,6 +5,8 @@ const appSidebarWidth = 240;
 export default function AppHeader() {
   return (
     <AppBar
+      color="transparent"
+      elevation={0}
       position="fixed"
       sx={{
         width: `calc(100% - ${appSidebarWidth}px)`,
