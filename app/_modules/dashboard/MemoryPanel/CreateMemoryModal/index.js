@@ -12,6 +12,7 @@ import {
   TextField,
 } from '@mui/material';
 
+import TiptapEditor from '@/components/TiptapEditor';
 import useCreateMemoryForm from '@/hooks/dashboard/useCreateMemoryForm';
 import { useSharedCreateMemoryModal } from '@/hooks/dashboard/dashboardModalHooks';
 import useMemories from '@/hooks/dashboard/memoryHooks';
@@ -52,6 +53,7 @@ export default function CreateMemoryModal() {
             />
           )}
         />
+        <TiptapEditor />
       </DialogContent>
       <DialogActions>
         <Button onClick={closeCreateMemoryModal}>Cancel</Button>
