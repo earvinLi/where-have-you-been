@@ -53,7 +53,17 @@ export default function CreateMemoryModal() {
             />
           )}
         />
-        <TiptapEditor />
+        <Controller
+          name="memoryContent"
+          control={createMemoryFormControl}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <TiptapEditor
+              value={field.value}
+              onChange={field.onChange}
+            />
+          )}
+        />
       </DialogContent>
       <DialogActions>
         <Button onClick={closeCreateMemoryModal}>Cancel</Button>
